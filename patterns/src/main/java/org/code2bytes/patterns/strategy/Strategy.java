@@ -50,5 +50,7 @@ public final class Strategy {
         LOG.info("Car model -> " + car.getModel());
         car = new Car("BMW");
         LOG.info("Car model -> " + car.getModel());
+        car = new Car("Mercedes");
+        LOG.info("Car model -> " + car.getModel());
     }
 }
