@@ -39,18 +39,27 @@ public final class Strategy {
     }
 
     /**
-     * Main method to test the pattern.
+     * The strategy pattern allows to define different algorithms (strategies, policies) for a given
+     * behavior. A class encapsulates this behavior by using an interface. The strategy is
+     * changeable at runtime.
      *
      * @param args
      *            command line arguments
      */
     public static void main(final String[] args) {
-        Car car;
-        car = new Car("Porsche");
-        LOG.info("Car model -> " + car.getModel());
-        car = new Car("BMW");
-        LOG.info("Car model -> " + car.getModel());
-        car = new Car("Mercedes");
-        LOG.info("Car model -> " + car.getModel());
+        final Car porsche = new Car(CarModel.PORSCHE, new StrongMotor());
+        LOG.info(porsche.getModel().toString());
+        final Car vw = new Car(CarModel.VW, new AverageMotor());
+        LOG.info(vw.getModel().toString());
+        final Car fiat = new Car(CarModel.FIAT, new UnderpoweredMotor());
+        LOG.info(fiat.getModel().toString());
+
+        porsche.drive();
+        vw.drive();
+        fiat.drive();
+
+        LOG.info("Tuning the Fiat");
+        fiat.setMotor(new StrongMotor());
+        fiat.drive();
     }
 }

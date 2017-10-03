@@ -26,16 +26,24 @@ public class Car {
     /**
      * Model name.
      */
-    private final String model;
+    private final CarModel model;
+
+    /**
+     * The motor of the car.
+     */
+    private Motor motor;
 
     /**
      * A car initialized with a model name.
      *
      * @param model
      *            model name
+     * @param motor
+     *            motor of the car
      */
-    public Car(final String model) {
+    public Car(final CarModel model, final Motor motor) {
         this.model = model;
+        this.motor = motor;
     }
 
     /**
@@ -43,7 +51,33 @@ public class Car {
      *
      * @return model name
      */
-    public String getModel() {
+    public CarModel getModel() {
         return model;
+    }
+
+    /**
+     * Returns the motor.
+     *
+     * @return motor
+     */
+    public Motor getMotor() {
+        return motor;
+    }
+
+    /**
+     * Sets the car's motor.
+     *
+     * @param motor
+     *            motor of the car
+     */
+    public void setMotor(final Motor motor) {
+        this.motor = motor;
+    }
+
+    /**
+     * Drive the car.
+     */
+    public void drive() {
+        motor.drive();
     }
 }
