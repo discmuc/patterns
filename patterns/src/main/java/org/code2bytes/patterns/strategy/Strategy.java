@@ -15,6 +15,9 @@
  */
 package org.code2bytes.patterns.strategy;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * Example for strategy pattern.
  *
@@ -22,6 +25,11 @@ package org.code2bytes.patterns.strategy;
  * @author Dieter Scholz
  */
 public final class Strategy {
+
+    /**
+     * Class logger.
+     */
+    private static final Log LOG = LogFactory.getLog(Strategy.class);
 
     /**
      * Empty private constructor.
@@ -37,6 +45,7 @@ public final class Strategy {
      *            command line arguments
      */
     public static void main(final String[] args) {
-        // empty
+        final Car car = new Car("Porsche");
+        LOG.info("Car model -> " + car.getModel());
     }
 }
