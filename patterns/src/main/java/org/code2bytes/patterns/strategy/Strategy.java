@@ -45,7 +45,10 @@ public final class Strategy {
      *            command line arguments
      */
     public static void main(final String[] args) {
-        final Car car = new Car("Porsche");
+        Car car;
+        car = new Car("Porsche");
+        LOG.info("Car model -> " + car.getModel());
+        car = new Car("BMW");
         LOG.info("Car model -> " + car.getModel());
     }
 }
