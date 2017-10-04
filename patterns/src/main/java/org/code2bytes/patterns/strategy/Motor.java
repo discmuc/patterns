@@ -25,6 +25,9 @@ public interface Motor {
 
     /**
      * Start the motor and go.
+     *
+     * @param car
+     *            the car to drive
      */
-    void drive();
+    void drive(Car car);
 }

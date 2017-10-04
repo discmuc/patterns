@@ -41,18 +41,15 @@ public final class Strategy {
     /**
      * The strategy pattern allows to define different algorithms (strategies, policies) for a given
      * behavior. A class encapsulates this behavior by using an interface. The strategy is
-     * changeable at runtime.
+     * changeable at runtime. The concrete strategy can optionally use context data if necessary.
      *
      * @param args
      *            command line arguments
      */
     public static void main(final String[] args) {
         final Car porsche = new Car(CarModel.PORSCHE, new StrongMotor());
-        LOG.info(porsche.getModel().toString());
         final Car vw = new Car(CarModel.VW, new AverageMotor());
-        LOG.info(vw.getModel().toString());
         final Car fiat = new Car(CarModel.FIAT, new UnderpoweredMotor());
-        LOG.info(fiat.getModel().toString());
 
         porsche.drive();
         vw.drive();

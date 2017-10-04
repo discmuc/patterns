@@ -37,7 +37,8 @@ public class StrongMotor implements Motor {
      * @see org.code2bytes.patterns.strategy.Motor#drive()
      */
     @Override
-    public void drive() {
-        LOG.info("This motor runs with the following sound: BROOOOAAAAAAHHHHM");
+    public void drive(final Car car) {
+        LOG.info("The motor of a " + car.getModel()
+                + " runs with the following sound: BROOOOAAAAAAHHHHM");
     }
 }

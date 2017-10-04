@@ -78,6 +78,6 @@ public class Car {
      * Drive the car.
      */
     public void drive() {
-        motor.drive();
+        motor.drive(this);
     }
 }
